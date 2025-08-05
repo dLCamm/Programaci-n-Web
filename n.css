@@ -5,3 +5,40 @@
     background-color: #141414;
 }
 
+.container{
+    display:flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    width: 70%;
+    justify-content: center;
+    
+}
+
+.quienestaviendo{
+    color: white;
+    font-size: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 10px;
+    
+}
+
+.perfiles{
+    display: flex;
+    background-color: aqua;
+    width: 80%
+
+}
+
+.pie{
+    display : flex;
+}
+
+.user{
+    display: flex;
+    width: 200px;
+    height: 200px;
+    margin: 10px;
+    
+    background-color: #04d400;
+   ;
+}
