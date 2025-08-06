@@ -17,18 +17,18 @@
 
 .quienestaviendo{
     color: white;
-    font-size: 35px;
+    font-size: 55px;
     font-family: "Montserrat", sans-serif;
     font-optical-sizing: auto;;
     margin: 10px;
     margin-bottom: 40px;
-    background-color: forestgreen;
+    background-color: #141414;
     
 }
 
 .perfiles{
     display: flex;
-    background-color: aqua;
+    background-color: #141414;
     width: 77%;
     flex-wrap: wrap;
     justify-content: center;
@@ -42,7 +42,7 @@
     margin-top: 35px;
     font-size: 20px;
     font-family: Arial, Helvetica, sans-serif;
-    width: 30%;
+    width: 27%;
     height: 40px;
     color: rgb(124, 124, 124);
     border: 1px solid  rgb(124, 124, 124);
@@ -57,7 +57,7 @@
     margin: 10px;
     flex-direction: column;
     
-    background-color: #04d400;
+    background-color: #141414;
 
 }
 
