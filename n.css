@@ -5,6 +5,14 @@
     background-color: #141414;
 }
 
+body
+{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;  
+}
+
 
 .container{
     display:flex;
@@ -12,6 +20,7 @@
     width: 60%;
     align-items: center;
     justify-content: space-evenly;
+    margin-bottom: 50px;
  
 }
 
@@ -23,6 +32,7 @@
     margin: 10px;
     margin-bottom: 40px;
     background-color: #141414;
+    align-items: center;
     
 }
 
