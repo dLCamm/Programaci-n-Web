@@ -19,7 +19,7 @@ jobs:
           node-version: '18'
 
       - name: Install dependencies
-        run: npm ci
+        run: cd vite-project && npm ci
 
       - name: Build (Vite)
         run: npm run build
