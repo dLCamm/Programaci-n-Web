@@ -1,0 +1,83 @@
+:root {
+  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #242424;
+  
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+ 
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  
+ 
+}
+
+.encabezado {
+  background-color: #e95050;
+  color: white;
+  text-align: center;
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+.container_poke {
+  display: flex;
+ 
+  justify-content: center;
+  padding: 20px;
+  margin: auto;
+  background-color: aquamarine;
+  width: 80%;
+  flex-wrap: wrap;
+  
+  
+}
+
+.pokemon{
+  display: flex;
+  background-color: bisque;
+  flex-direction: column;
+  
+  width: 20%;
+  height: 300px;
+  margin: 10px;
+  
+  
+
+}
+
+.pokemon_img{
+  display: flex;
+  background-color: darkcyan;
+  height: 80%;
+  border-radius: 10px;
+ 
+
+}
+
+.name{
+  display: flex;
+  font-size: 20px;
+  background-color: darkkhaki;
+  margin: 0;
+  height: 10%;
+  border-radius: 10px;
+  align-items: center;
+  justify-content: center;
+  
+
+
+}
+
+
