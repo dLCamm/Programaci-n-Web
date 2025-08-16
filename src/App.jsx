@@ -1,41 +1,38 @@
-import { useState } from 'react'
-import './index.css'
+import { useState, useEffect } from "react";
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [pokemons, setPokemons] = useState([]);
 
-  
-    return (
-      <>
-        <div className="container_poke">
-          <div className="pokemon">
-            <div className="pokemon_img">Imagen</div>
+  useEffect(() => {
+    
+    const ids = Array.from({ length: 303 }, (_, i) => i + 1);
 
-            <p class="name">Bulbasaur</p>
-            <p class="name">Tierra</p>
+    Promise.all(
+      ids.map((id) =>
+        fetch(`https://pokeapi.co/api/v2/pokemon/${id}`)
+          .then((res) => res.json())
+          .then((data) => ({
+            nombre: data.name,
+            imagen: data.sprites.front_default,
+            peso: data.weight / 10 + " kg",
+          }))
+      )
+    )
+      .then((pokemons) => setPokemons(pokemons))
+      .catch((error) => console.error("Error al obtener los Pokémon:", error));
+  }, []);
 
-          </div>
-          <div className="pokemon">
-            <div className="pokemon_img">I</div>
-          </div>
-          <div className="pokemon">
-            <h1>hi</h1>
-          </div>
-          <div className="pokemon">
-            <h1>hey</h1>
-          </div>
-          <div className="pokemon">
-            <h1>hihi</h1>
-          </div>
-          <div className="pokemon">
-            <h1>jeje</h1>
-          </div>
-          
-            
-          
+  return (
+    <div className="container_poke">
+      {pokemons.map((poke) => (
+        <div className="pokemon" >
+          <img className="pokemon_img" src={poke.imagen} alt={poke.nombre} />
+          <p className="name">{poke.nombre}</p>
+          <p className="name">Peso: {poke.peso}</p>
         </div>
-      </>
-    ) 
+      ))}
+    </div>
+  );
 }
 
-export default App
+export default App;
