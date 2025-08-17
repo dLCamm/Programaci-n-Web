@@ -5,7 +5,7 @@
 
   color-scheme: light dark;
   color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
+  background-color: aquamarine;
   
 
   font-synthesis: none;
@@ -19,6 +19,9 @@ body {
   margin: 0;
   padding: 0;
   border: 0;
+  background-image: url("https://pm1.aminoapps.com/6166/fe7e94e869b9e995ebaa838eb60954bfcff57269_hq.jpg");
+  background-attachment: fixed;
+  background-size: cover; /* Opcional: ajusta la imagen al tamaño del contenedor */
   
  
 }
@@ -37,7 +40,7 @@ body {
   justify-content: center;
   padding: 20px;
   margin: auto;
-  background-color: aquamarine;
+  background-color: transparent;
   width: 80%;
   flex-wrap: wrap;
   
@@ -46,12 +49,14 @@ body {
 
 .pokemon{
   display: flex;
-  background-color: bisque;
+  background-color: transparent;
   flex-direction: column;
+  border-radius: 10px;
   
   width: 250px;
   height: 300px;
   margin: 10px;
+  background-color: rgba(211, 248, 214, 0.923);
   
   
 
@@ -59,25 +64,34 @@ body {
 
 .pokemon_img{
   display: flex;
-  background-color: darkcyan;
   height: 80%;
-  border-radius: 10px;
- 
+  
 
 }
 
 .name{
   display: flex;
   font-size: 20px;
-  background-color: darkkhaki;
+  background-color: rgba(44, 78, 42, 0.959);
   margin: 0;
   height: 10%;
-  border-radius: 10px;
   align-items: center;
   justify-content: center;
-  
-
+  font-family:Verdana, Geneva, Tahoma, sans-serif;
 
 }
 
+.peso{
+  display: flex;
+  font-size: 20px;
+  background-color: rgba(44, 78, 42, 0.959);
+  margin: 0;
+  height: 10%;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  align-items: center;
+  justify-content: center;
+  font-family:Verdana, Geneva, Tahoma, sans-serif;
+
+}
 

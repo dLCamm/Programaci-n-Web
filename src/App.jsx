@@ -5,7 +5,7 @@ function App() {
 
   useEffect(() => {
     
-    const ids = Array.from({ length: 303 }, (_, i) => i + 1);
+    const ids = Array.from({ length: 42 }, (_, i) => i + 1);
 
     Promise.all(
       ids.map((id) =>
@@ -28,7 +28,8 @@ function App() {
         <div className="pokemon" >
           <img className="pokemon_img" src={poke.imagen} alt={poke.nombre} />
           <p className="name">{poke.nombre}</p>
-          <p className="name">Peso: {poke.peso}</p>
+          <p className="peso">Peso: {poke.peso}</p>
+          
         </div>
       ))}
     </div>
