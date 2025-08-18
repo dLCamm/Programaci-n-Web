@@ -18,6 +18,6 @@ Screenshot of the app showing Pokémon cards.
 ![alt text](<docs/Captura de pantalla 2025-08-17 180831.png>)
 
 
-Public CloudFront CDN link to access the application.
+Public CloudFront CDN link to access the application:
 
-[My Website](d1wizdl5olwhfd.cloudfront.net)
+d1wizdl5olwhfd.cloudfront.net
