@@ -1,23 +1,23 @@
-Pestaña "Config Syncs" de Doppler mostrando la integración con mi repositorio.
+Doppler's "Config Syncs" tab showing the integration with my repository.
 
 ![alt text](<docs/Captura de pantalla 2025-08-17 175958.png>)
 
 
-Variables de Doppler.
+Doppler variables.
 
 ![alt text](<docs/Captura de pantalla 2025-08-17 175707.png>)
 
 
-Captura de pantalla de los secretos en GitHub.
+Screenshot of secrets on GitHub.
 
 ![alt text](<docs/Captura de pantalla 2025-08-17 180056.png>)
 
 
-Captura de la aplicación mostrando las tarjetas de Pokémon.
+Screenshot of the app showing Pokémon cards.
 
 ![alt text](<docs/Captura de pantalla 2025-08-17 180831.png>)
 
 
-URL pública del CDN de CloudFront para acceder a la aplicación.
+Public CloudFront CDN link to access the application.
 
-d1wizdl5olwhfd.cloudfront.net 
+[My Website](d1wizdl5olwhfd.cloudfront.net)
