@@ -1,35 +1,66 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { useState, useEffect } from "react";
+import TaskForm from "./components/añadir";
+import TaskList from "./components/listar";
+import './index.css'
 
 function App() {
-  const [count, setCount] = useState(0)
+  
+  const [tasks, setTasks] = useState(() => {
+    const saved = localStorage.getItem("tasks");
+    return saved ? JSON.parse(saved) : [];
+  });
+
+  const [filter, setFilter] = useState("all");
+
+  useEffect(() => {
+    localStorage.setItem("tasks", JSON.stringify(tasks));
+  }, [tasks]);
+
+  const addTask = (name) => {
+    const newTask = {
+      id: Date.now(),  
+      name: name,      
+      completed: false, 
+    };
+    setTasks([...tasks, newTask]);
+  };
+
+  const toggleTask = (id) => {
+    setTasks(
+      tasks.map((task) =>
+        task.id === id ? { ...task, completed: !task.completed } : task
+      )
+    );
+  };
+
+  const deleteTask = (id) => {
+    setTasks(tasks.filter((task) => task.id !== id));
+  };
+
+  const filteredTasks = tasks.filter((task) => {
+    if (filter === "pending") return !task.completed;
+    if (filter === "completed") return task.completed;
+    return true; 
+  });
 
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+    <div style={{ padding: "20px", fontFamily: "Arial" }}>
+      <h1>Gestión de Tareas</h1>
+
+      {}
+      <TaskForm addTask={addTask} />
+
+      {}
+      <div style={{ marginTop: "10px" }}>
+        <button onClick={() => setFilter("all")}>Todas</button>
+        <button onClick={() => setFilter("pending")}>Pendientes</button>
+        <button onClick={() => setFilter("completed")}>Completadas</button>
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+
+      {}
+      <TaskList tasks={filteredTasks} toggleTask={toggleTask} deleteTask={deleteTask} />
+    </div>
+  );
 }
 
-export default App
+export default App;
