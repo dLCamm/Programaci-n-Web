@@ -1,4 +1,4 @@
-name: Files to S3 hw4
+name: Upload files to S3
 
 on:
   push:
