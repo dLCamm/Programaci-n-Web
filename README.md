@@ -11,7 +11,7 @@ Lista las tareas
 Agrega las tareas
 ![alt text](docs/image-4.png)
 
-Tacha las tareas terminadas, y elmina
+Tacha las tareas terminadas, y elimina
 ![alt text](docs/image-5.png)
 
 Pagina: 
