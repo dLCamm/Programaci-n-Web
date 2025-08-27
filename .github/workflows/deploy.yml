@@ -3,7 +3,7 @@ name: Files to S3 hw4
 on:
   push:
     branches:
-      - hw-04 
+      - homework-04
 
 env:
   MY_AWS_REGION: ${{ secrets.AWS_REGION }}     
