@@ -23,3 +23,11 @@ class materials(models.Model):
 
     def __str__(self):
         return self.name_material
+    
+class necessary_experience(models.Model):
+    years = models.IntegerField()
+    details = models.CharField(max_length=(100))
+    job = models.ForeignKey(Job, on_delete=models.CASCADE)
+
+    def __str__(self):
+        return self.years
