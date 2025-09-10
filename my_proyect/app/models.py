@@ -14,4 +14,12 @@ class Job(models.Model):
     person = models.ForeignKey(Persona, on_delete=models.CASCADE)
 
     def __str__(self):
-        return self.nombre    
+        return self.namejob   
+    
+class materials(models.Model):
+    name_material = models.CharField(max_length=(100))
+    amount = models.IntegerField()
+    job = models.ForeignKey(Job, on_delete=models.CASCADE)
+
+    def __str__(self):
+        return self.name_material
