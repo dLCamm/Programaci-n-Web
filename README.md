@@ -1,10 +1,9 @@
-# Programaci-n-Web
+Steps to run the application
 
-First Table
-![alt text](Docs/image.png)
+1. Clone the repository
 
-Table Two
-![alt text](Docs/image2.png)
+2. If not this repository, create the .env with the Django and database configuration
 
-all
-![alt text](Docs/image3.png)
+3. Start the containers with the following command: "docker compose up --build"
+
+4. Access the application, in this case "http://localhost:8000"
