@@ -45,6 +45,6 @@ class MostrarSecreto(APIView):
         if val:
             return Response({"secret": val})
         else:
-            return Response({"error": "key not found or already revealed"}, status=status.HTTP_404_NOT_FOUND)
+            return Response({"error": "Llave no encontrada (Probablemente Ya Fue Usada)"}, status=status.HTTP_404_NOT_FOUND)
 
         
