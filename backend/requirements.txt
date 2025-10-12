@@ -1,0 +1,5 @@
+Django>=4.2
+djangorestframework
+redis>=4.5.0
+gunicorn
+django-cors-headers
