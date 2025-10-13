@@ -5,6 +5,7 @@ import secrets
 import redis
 from django.conf import settings
 
+
 db = redis.Redis(host=settings.REDIS_HOST, port=settings.REDIS_PORT, decode_responses=True)
 
 GETDEL_LUA = """
@@ -19,8 +20,16 @@ end
 
 class EsconderSecreto(APIView):
 
-    def post(self, dato):
-        secret = dato.data.get("secret")
+    def post(self, request):
+  
+        secret = request.data.get("secret")
+        print("request.data:", request.data)
+
+
+
+
+        if not secret:
+            return Response({"Error": "no hay secreto"}, status=400)
 
         for _ in range(10):
             key = secrets.token_urlsafe(24) 
@@ -31,9 +40,9 @@ class EsconderSecreto(APIView):
         return Response({"error": "Llave no generada"}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
 
 class MostrarSecreto(APIView):
-    def post(self, dato):
+    def post(self, request):
 
-        key = dato.data.get("key")
+        key = request.data.get("key")
 
         try:
             val = db.eval(GETDEL_LUA, 1, key)

@@ -1,25 +1,33 @@
-version: "3.8"
 services:
+
   redis:
     image: redis:7-alpine
+    container_name: redis
     ports:
       - "6379:6379"
     volumes:
       - redis_data:/data
 
   redisinsight:
-    image: redislabs/redisinsight:2.0.0
+    image: redislabs/redisinsight:latest
+    container_name: redisinsight
     ports:
       - "8001:8001"
     depends_on:
       - redis
 
+
   backend:
     build:
       context: ./backend
+    container_name: backend
+    command: gunicorn secret.wsgi:application --bind 0.0.0.0:8000 --workers 3 --timeout 120
+    volumes:
+      - ./backend:/app
     environment:
-      - REDIS_HOST=redis
-      - REDIS_PORT=6379
+      - REDIS_HOST: redis
+      - REDIS_PORT: 6379
+      - DJANGO_SETTINGS_MODULE: secret.settings
     ports:
       - "8000:8000"
     depends_on:
@@ -28,10 +36,16 @@ services:
   frontend:
     build:
       context: ./frontend
+    container_name: frontend
     environment:
-      - REACT_APP_API_URL=http://backend:8000/api
+      REACT_APP_API_URL: http://localhost:8000/api
+      CHOKIDAR_USEPOLLING: "true"
     ports:
       - "3000:3000"
+    volumes:
+      - ./frontend:/app
+    stdin_open: true
+    tty: true
     depends_on:
       - backend
 

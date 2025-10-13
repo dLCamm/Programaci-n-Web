@@ -3,5 +3,6 @@ WORKDIR /app
 COPY package.json package-lock.json ./
 RUN npm ci
 COPY . .
+ENV CHOKIDAR_USEPOLLING=true
 EXPOSE 3000
 CMD ["npm", "start"]

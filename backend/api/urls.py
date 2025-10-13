@@ -1,7 +1,7 @@
 from django.urls import path
-from . import views
+from .views import EsconderSecreto, MostrarSecreto 
 
 urlpatterns = [
-    path("hide/", views.EsconderSecreto.as_view(), name="hide"),
-    path("show/", views.MostrarSecreto.as_view(), name="show"), 
+    path('hide/', EsconderSecreto.as_view(), name='hide'),
+    path('show/', MostrarSecreto.as_view(), name='show'),
 ]

@@ -2,6 +2,7 @@ import React, { useState } from "react";
 
 const API = process.env.REACT_APP_API_URL || "http://localhost:8000/api";
 
+
 export default function Hide() {
   const [secret, setSecret] = useState("");
   const [key, setKey] = useState(null);
@@ -15,10 +16,12 @@ export default function Hide() {
 
     try {
       const res = await fetch(`${API}/hide/`, {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ secret }),
-      });
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ secret }),
+    });
       const data = await res.json();
       if (res.ok) {
         setKey(data.key);
@@ -29,13 +32,6 @@ export default function Hide() {
     } catch (err) {
       setError("Error de conexión");
     }
-  }
-
-  function copyKey() {
-    if (!key) return;
-    navigator.clipboard.writeText(key).then(() => {
-      alert("Link copiado al portapapeles");
-    });
   }
 
   return (
